@@ -488,31 +488,7 @@ const kompasnews = () => {
             .catch(reject)
     })
 }
-const inews = () => {
-    return new Promise((resolve, reject) => {
-        axios.get(`https://www.inews.id/news`)
-            .then(({
-                data
-            }) => {
-                const $ = cheerio.load(data)
-                const hasil = [];
-                 $('#news-list > li ').each(function(a, b) {
-                    result = {
-                    status: 200,
-                    author: author,bg
-                    berita: $(b).find('> a > div > div > div.float-left.width-400px.margin-130px-left > h3').text().trim(),
-                    upload_time: $(b).find('> a > div > div > div.float-left.width-400px.margin-130px-left > div.date.margin-10px-left').text().trim().split('|')[0],
-                    link: $(b).find('> a').attr('href'),
-                    thumbnail: $(b).find('> a > div > div > div.float-left.width-130px.position-absolute > img').attr('data-original'),
-                    info_berita: $(b).find('> a > div > div > div.float-left.width-400px.margin-130px-left > p').text()
-                }
-                hasil.push(result)
-                })
-                resolve(hasil)
-            })
-            .catch(reject)
-    })
-}
+
 module.exports.Downloader = downloader
 module.exports.Anime = anime
 module.exports.Manga = manga
@@ -533,4 +509,3 @@ module.exports.ListSurah = listsurah
 module.exports.Surah = surah
 module.exports.TafsirSurah = tafsirsurah
 module.exports.KompasNews = kompasnews
-module.exports.INews = inews
