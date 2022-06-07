@@ -27,4 +27,3 @@ module.exports.ListSurah = xa.ListSurah
 module.exports.Surah = xa.Surah
 module.exports.TafsirSurah = xa.TafsirSurah
 module.exports.KompasNews = xa.KompasNews
-module.exports.INews = xa.INews
